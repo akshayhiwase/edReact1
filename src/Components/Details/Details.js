@@ -2,13 +2,15 @@ import React from 'react'
 import Axios from 'axios'
 
 class Details extends React.Component {
+    constructor(props) {
+        super(props);
 
-    state = {
-        videoInfo: {}
+        this.state = {
+            videoInfo: {}
+        }
     }
-
     componentDidMount() {
-        const videoId = this.props.match.params.id
+        const videoId = this.props.params.match.params.id
         Axios.get('https://5dfb78000301690014b8fbde.mockapi.io/VideoLists/' + videoId)
             .then((response) => {
                 console.log(response.data)

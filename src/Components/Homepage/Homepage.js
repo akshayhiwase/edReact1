@@ -31,7 +31,7 @@ class Homepage extends React.Component {
                 <div className={classes.videocards} key={item.id}>
                     <Link to={`/details/${item.id}`}>
 
-                        <img src={item.thumbnail} alt="item.title" />
+                        <img src={item.thumbnail} alt={item.title} />
                         <h1>{item.title}</h1>
                     </Link>
                 </div>
