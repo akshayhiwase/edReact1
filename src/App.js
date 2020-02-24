@@ -13,16 +13,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginUser: false,
+      loginUser: localStorage.getItem("UserStatus"),
 
     }
   }
 
   onLoginBtnClick = () => {
     this.setState({ loginUser: true })
+    localStorage.setItem("UserStatus", this.state.loginUser)
   }
   onLogoutBtnClick = () => {
     this.setState({ loginUser: false })
+    localStorage.setItem("UserStatus", this.state.loginUser)
+
   }
   render() {
 
